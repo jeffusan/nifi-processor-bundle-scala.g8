@@ -19,6 +19,7 @@ package $package$
 // NiFi
 import org.apache.nifi.components.PropertyDescriptor
 import org.apache.nifi.processor.util.StandardValidators
+import org.apache.nifi.expression.ExpressionLanguageScope
 
 trait $classname$Properties {
   val ExampleProperty =
@@ -26,7 +27,7 @@ trait $classname$Properties {
       .name("Example Property")
       .description("Whatever the property does")
       .required(true)
-      .expressionLanguageSupported(true)
+      .expressionLanguageSupported(ExpressionLanguageScope.FLOWFILE_ATTRIBUTES)
       .addValidator(StandardValidators.NON_EMPTY_VALIDATOR)
       .build
 
